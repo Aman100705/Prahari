@@ -59,6 +59,13 @@ export default function ShieldPage() {
     return () => { if (timer.current) clearTimeout(timer.current); };
   }, [playing, revealed, step]);
 
+  // Hands-free mode for demos / captures: /shield?autoplay=1
+  useEffect(() => {
+    if (typeof window !== "undefined" && new URLSearchParams(window.location.search).has("autoplay")) {
+      setPlaying(true);
+    }
+  }, []);
+
   const play = () => {
     if (done) setRevealed(0);
     setPlaying(true);

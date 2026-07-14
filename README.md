@@ -1,12 +1,22 @@
 <div align="center">
 
+<img src="docs/screenshots/landing.png" alt="Prahari — the intelligence layer against organised digital fraud" width="880"/>
+
 # प्रहरी · Prahari
 
 ### The intelligence layer between citizens and organised digital fraud
 
-*ET AI Hackathon 2026 · Problem Statement 6 — AI for Digital Public Safety*
+[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-prahari--nine.vercel.app-eba53b?style=for-the-badge&logoColor=white)](https://prahari-nine.vercel.app)
+[![Pitch Deck](https://img.shields.io/badge/Pitch_Deck-12_slides-111a25?style=for-the-badge)](https://prahari-nine.vercel.app/deck.html)
+[![Architecture](https://img.shields.io/badge/Architecture-docs-111a25?style=for-the-badge)](docs/ARCHITECTURE.md)
 
-**Shield** (citizens) · **Graph** (cyber police) · **Command** (national war-room) — one connected intelligence fabric.
+![Next.js](https://img.shields.io/badge/Next.js_16-000?logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React_19-20232a?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_v4-0b1120?logo=tailwindcss)
+![Build](https://img.shields.io/badge/production_build-passing-2ed3a7)
+
+<sub>ET AI Hackathon 2026 · Problem Statement 6 — AI for Digital Public Safety</sub>
 
 </div>
 
@@ -16,76 +26,108 @@
 
 India files **1.14 million cybercrime complaints a year** and acts on them **one victim at a time, after the money is gone.** "Digital arrest" scams alone stole **₹1,776 crore in nine months** (MHA, 2024). The data exists — the intelligence layer to act on it *before* mass victimisation does not.
 
-Prahari is that layer. It fuses **scam-call intelligence, fraud-network graphs and counterfeit detection** into a single real-time system, shifting public safety from *reactive investigation* to *predictive neutralisation*.
+**Prahari** is that layer. It fuses **scam-call intelligence, fraud-network graphs and counterfeit detection** into a single real-time system — shifting public safety from *reactive investigation* to *predictive neutralisation*.
 
-## The demo spine — one campaign, three surfaces
+> **One campaign, three surfaces, minutes not months:** a retiree gets a fake-CBI video call → **Shield** flags the digital-arrest script *before any transfer* → the number + mule account feed **Graph**, which clusters 214 scattered complaints into one court-admissible campaign → **Command** maps its national spread and dispatches the nearest cyber cell — while a bank teller gets a **counterfeit-note** flag on the mule's cash.
 
-A single fraud campaign flows through Prahari end-to-end, **signal to neutralisation in minutes**:
+---
 
-1. A retiree gets a WhatsApp video call from a fake "CBI officer."
-2. **Prahari Shield** reads the call live, recognises the digital-arrest script and returns a **CRITICAL** verdict *before any transfer* — then orchestrates the response (1930/NCRB, telecom block, bank freeze, family alert).
-3. The spoofed number and mule account feed **Prahari Graph**, which clusters scattered complaints into one **court-admissible** campaign (*Op. Chakravyuh*) spanning four states.
-4. **Prahari Command** shows the campaign's live geospatial spread, prioritises enforcement, and dispatches the nearest cyber cell — while a bank teller gets a **counterfeit-note CV** flag on the mule's cash deposit.
+## 🛡 Shield — stops the scam at the point of contact
 
-## The three surfaces
+<img src="docs/screenshots/shield.png" alt="Prahari Shield — live scam-call triage" width="100%"/>
 
-| Surface | Audience | What it does | Core AI |
-|---|---|---|---|
-| **Shield** | Citizens, banks | Live multilingual triage of a call/message; recognises the digital-arrest playbook as it unfolds; verdict + orchestrated response | Weighted linguistic classifier, **noisy-OR** signal fusion |
-| **Graph** | Cyber police | Fuses numbers, mule accounts, devices & victims into a live fraud-network graph; generates court-admissible intelligence packages | **Force-directed graph AI**, centrality ranking, entity resolution |
-| **Command** | Agencies, MHA | Geospatial threat map, live interception feed, enforcement prioritisation, on-device counterfeit detection | Geospatial hotspot analytics, **computer-vision** note authentication |
+Reads a live call or message and recognises the digital-arrest playbook **as it unfolds** — authority impersonation, the phrase "digital arrest," isolation coercion, "transfer to verify." A weighted classifier with **noisy-OR fusion** compounds the evidence; the risk gauge crosses **CRITICAL before a single rupee moves**, triggering five orchestrated actions (1930/NCRB, telecom block, bank freeze, family alert) — in 12 languages.
 
-## Why it wins (mapped to the rubric)
+## ◇ Graph — turns one report into the whole network
+
+<img src="docs/screenshots/graph.png" alt="Prahari Graph — fraud-network intelligence" width="100%"/>
+
+Entity resolution across numbers, mule accounts and devices fuses scattered complaints into one live fraud network — *Op. Chakravyuh*. Centrality ranks the actors (handlers → mule layer → crypto off-ramp → cross-border command node), and one click generates a **court-admissible intelligence package**: money trail, applicable statutes (BNS, IT Act, PMLA) and a tamper-evident chain-of-custody digest.
+
+## ◈ Command — directs the response across the country
+
+<img src="docs/screenshots/command.png" alt="Prahari Command — geospatial fraud war-room" width="100%"/>
+
+A geospatial war-room over India's real fraud geography (Jamtara, Mewat, Bharatpur): live interception feed, source→target scam-flow arcs, and an **enforcement priority queue** ranking where to deploy for maximum disruption — plus a fourth modality, on-device **computer-vision** authentication of counterfeit ₹500 notes.
+
+---
+
+## How it works
+
+Six specialised agents reason over one shared knowledge graph and coordinate on a signal bus. Every automated action is structured and auditable — never opaque.
+
+```mermaid
+flowchart LR
+  V["📞 Victim<br/>(Shield)"] --> TA["Triage Agent<br/>NLP · noisy-OR"]
+  TA --> ORC["Orchestrator<br/>playbooks + gates"]
+  TA --> GA["Graph Agent<br/>entity resolution"]
+  GA --> GEO["Geospatial Agent<br/>hotspots · dispatch"]
+  CV["Counterfeit Agent<br/>computer vision"] --> GA
+  RAG["Compliance / RAG<br/>statutes · NCRB"] --> ORC
+  GA --> KG[("Knowledge Graph")]
+  GEO --> CMD["🗺 Command"]
+  ORC --> ACT["📱 1930 · telecom · bank"]
+  KG -.-> CMD
+```
+
+**Frontend** Next.js 16 · React 19 · TypeScript · Tailwind v4 (hand-built design system) · bespoke SVG data-viz (force graph, geospatial map, risk gauges).
+**AI core (in-repo, runs offline)** weighted classifier + noisy-OR fusion · d3-force graph analytics · counterfeit feature scoring · intelligence-package generation.
+**Production target** Python FastAPI agent services · Claude reasoning agents · Neo4j · vector RAG · Kafka signal bus — see **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
+
+---
+
+## Why it wins
 
 *Judging: Innovation 25 · Business Impact 25 · Technical Excellence 20 · Scalability 15 · UX 15.*
 
-- **Innovation (25):** the only entry that *converges* four modalities — voice/NLP, graph, geospatial and CV — into one thread, with court-admissible output and a chain-of-custody digest.
-- **Business Impact (25):** the most topical crime in India; every screen quantifies rupees protected and lives shielded, grounded in cited 2024–26 figures.
-- **Technical Excellence (20):** a real multi-agent core, deterministic classifier with probabilistic fusion, a live force-directed graph, and a clean production build.
-- **Scalability (15):** stateless surfaces over a shared intelligence fabric; agent mesh scales per-modality (see [Architecture](docs/ARCHITECTURE.md)).
-- **User Experience (15):** a hand-built "command intelligence" design system — not a template, not a default dashboard.
+| Criterion | How Prahari maximises it |
+|---|---|
+| **Innovation** · 25 | The only entry that *converges* four modalities — voice/NLP, graph, geospatial, CV — into one thread with court-admissible output. |
+| **Business Impact** · 25 | India's most topical crime; every screen quantifies rupees protected, grounded in cited 2024–26 figures. |
+| **Technical Excellence** · 20 | Real multi-agent core, probabilistic fusion, live force-directed graph, clean production build. |
+| **Scalability** · 15 | Stateless surfaces over a shared fabric; per-modality autoscaling; jurisdiction-sharded graph. |
+| **User Experience** · 15 | A hand-built "command intelligence" design system — not a template, not a default dashboard. |
 
-## Tech stack
+---
 
-**Frontend** Next.js 16 (App Router) · React 19 · TypeScript · Tailwind v4 (CSS-first, hand-built design system) · Motion · bespoke SVG data-viz (force graph, geospatial map, gauges).
-**AI core (in-repo, runs offline)** weighted classifier + noisy-OR fusion · d3-force graph analytics · counterfeit feature scoring · intelligence-package generation.
-**Production target** Python FastAPI agent services · Claude for reasoning agents · Neo4j knowledge graph · vector RAG over regulatory corpora · Kafka signal bus (see [Architecture](docs/ARCHITECTURE.md)).
-
-## Run it
+## Run it locally
 
 ```bash
-cd prahari
+git clone https://github.com/Aman100705/Prahari.git
+cd Prahari
 npm install
-npm run dev          # http://localhost:3000
-# production:
-npm run build && npm start
+npm run dev            # → http://localhost:3000
 ```
 
-No API keys, no external services — the entire demo runs offline on a seeded, realistic dataset grounded in India's actual fraud geography (Jamtara, Mewat/Nuh, Bharatpur).
+No API keys, no external services — the entire demo runs **offline** on a seeded dataset grounded in India's real fraud geography.
 
-**Walkthrough:** `/` overview → `/shield` (press *Play live interception*) → `/graph` (*Generate intelligence package*) → `/command` (map + *Counterfeit lab*). Full script in [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md).
+**Walkthrough:** `/` overview → `/shield` (*Play live interception*, or `?autoplay=1`) → `/graph` (*Generate intelligence package*) → `/command` (map + *Counterfeit lab*). Narrated script in **[docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md)**.
 
-## Project structure
+<details>
+<summary><b>Project structure</b></summary>
 
 ```
 src/
   app/
     page.tsx                 # landing / product overview
-    (console)/               # the product shell (left rail + status strip)
+    (console)/               # product shell (left rail + status strip)
       shield/  graph/  command/
     api/triage/route.ts      # scam classifier endpoint
   components/
     brand/  ui/              # logo + hand-built primitives (no component lib)
-    landing/ graph/ command/ # RadarHero, ForceGraph, IndiaMap, CounterfeitPanel
-  lib/intel/                 # domain model, seeded dataset, classifier, dossier
-docs/                        # architecture + demo script
+    landing/ graph/ command/ # RadarHero · ForceGraph · IndiaMap · CounterfeitPanel
+  lib/intel/                 # domain model · seeded dataset · classifier · dossier
+docs/                        # architecture · demo script · screenshots
 ```
 
-## Documentation
-
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — system, data-flow & agent-mesh diagrams; production topology.
-- [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) — 90-second demo script, speaker notes, judge Q&A.
+</details>
 
 ---
 
-<div align="center"><sub>Prahari · प्रहरी — the sentinel. Built for ET AI Hackathon 2026.</sub></div>
+<div align="center">
+
+**[▶ Live Demo](https://prahari-nine.vercel.app)** · **[Pitch Deck](https://prahari-nine.vercel.app/deck.html)** · **[Architecture](docs/ARCHITECTURE.md)** · **[Demo Script](docs/DEMO_SCRIPT.md)**
+
+<sub>Prahari · प्रहरी — the sentinel. Built for ET AI Hackathon 2026.</sub>
+
+</div>
